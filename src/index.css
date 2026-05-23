@@ -1,0 +1,1016 @@
+@import "tailwindcss";
+
+@theme {
+  --font-arabic: "Readex Pro", "Segoe UI", sans-serif;
+  --font-english: "Outfit", sans-serif;
+  
+  --color-electric-blue: #3b82f6;
+  --color-energy-green: #22c55e;
+  --color-solar-yellow: #f59e0b;
+  --color-error-red: #ef4444;
+  --color-warning-orange: #f97316;
+  --color-gen-purple: #a855f7;
+}
+
+:root {
+  --bg-dark: #0A0A0B;
+  --bg-panel: #161618;
+  --border-glass: #2A2A2D;
+  --border-glow: rgba(59, 130, 246, 0.12);
+  --text-primary: #ffffff;
+  --text-secondary: #E0E0E0;
+  --text-muted: #707070;
+  
+  --electric-blue: #3b82f6;
+  --energy-green: #22c55e;
+  --solar-yellow: #f59e0b;
+  --error-red: #ef4444;
+  --warning-orange: #f97316;
+  --gen-purple: #a855f7;
+  
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.08);
+  --shadow-intense: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
+}
+
+.light-theme {
+  --bg-dark: #f8fafc;
+  --bg-panel: #ffffff;
+  --border-glass: #cbd5e1;
+  --border-glow: rgba(59, 130, 246, 0.05);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  
+  --shadow-intense: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Readex Pro', 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Custom Light Theme overrides for complete consistency */
+.light-theme select, 
+.light-theme .glass-input,
+.light-theme input {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.light-theme select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.light-theme {
+  color: #0f172a !important;
+  background-color: #f8fafc !important;
+}
+
+.light-theme .glow-bg {
+  opacity: 0.2;
+}
+
+.light-theme .app-header {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light-theme .header-logo h1 {
+  color: #0f172a !important;
+}
+
+.light-theme .header-logo span {
+  color: #475569 !important;
+}
+
+.light-theme .glass {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-theme .palette-item {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light-theme .palette-item:hover {
+  background: #f1f5f9 !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1) !important;
+}
+
+.light-theme .palette-item h5 {
+  color: #0f172a !important;
+}
+
+.light-theme .canvas-node {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.light-theme .canvas-node .node-title {
+  color: #1e293b !important;
+}
+
+.light-theme .canvas-node .node-number-input {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.light-theme .btn {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+.light-theme .btn:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #3b82f6 !important;
+}
+
+.light-theme .load-badge {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+.light-theme .panel-header h3 {
+  color: #2563eb !important;
+}
+
+.light-theme .accordion-content {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light-theme .advisor-user-bubble {
+  background-color: rgba(59, 130, 246, 0.04) !important;
+  border-color: rgba(59, 130, 246, 0.15) !important;
+  color: #0f172a !important;
+}
+
+.dashboard-meter-row {
+  background: #232326;
+  border: 1px solid #2A2A2D;
+}
+
+.dashboard-meter-row:hover {
+  border-color: #3A3A3D;
+}
+
+.dashboard-meter-label {
+  color: #a0a0a0;
+}
+
+.light-theme .dashboard-meter-row {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.light-theme .dashboard-meter-label {
+  color: #334155 !important;
+}
+
+.light-theme .battery-runtime-card {
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.08);
+}
+
+.light-theme .battery-runtime-card .runtime-muted {
+  color: #475569 !important;
+}
+
+.light-theme .battery-runtime-card .runtime-meta > span {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-color: #bbf7d0 !important;
+}
+
+.light-theme .footer-utility {
+  background: #ffffff !important;
+  border-color: #dbe4ee !important;
+  color: #0f172a !important;
+}
+
+.light-theme .footer-alerts-banner:not(.has-error):not(.has-warning) {
+  background: #ecfdf5 !important;
+  border-color: #86efac !important;
+}
+
+.light-theme .footer-alerts-banner.has-warning {
+  background: #fff7ed !important;
+  border-color: #fdba74 !important;
+}
+
+.light-theme .footer-alerts-banner.has-error {
+  background: #fef2f2 !important;
+  border-color: #fca5a5 !important;
+}
+
+/* Force text and background conversions for utility tailwind classes */
+.light-theme .text-white {
+  color: #0f172a !important;
+}
+
+.light-theme .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.light-theme .text-slate-350,
+.light-theme .text-slate-300 {
+  color: #334155 !important;
+}
+
+.light-theme .text-slate-400 {
+  color: #475569 !important;
+}
+
+.light-theme .text-slate-450,
+.light-theme .text-slate-500 {
+  color: #64748b !important;
+}
+
+.light-theme [class*="bg-[#0c0c0e]"],
+.light-theme .bg-white\/3 {
+  background-color: #f8fafc !important;
+}
+
+.light-theme [class*="bg-[#161618]"] {
+  background-color: #ffffff !important;
+}
+
+.light-theme [class*="bg-[#232326]"] {
+  background-color: #f1f5f9 !important;
+}
+
+.light-theme [class*="border-[#2A2A2D]"] {
+  border-color: #cbd5e1 !important;
+}
+
+.light-theme .border-white\/10 {
+  border-color: #cbd5e1 !important;
+}
+
+.light-theme .border-white\/5 {
+  border-color: #e2e8f0 !important;
+}
+
+.light-theme [class*="bg-[#121420]"],
+.light-theme .bg-black\/45 {
+  background-color: #f1f5f9 !important;
+}
+
+.light-theme .text-emerald-400 {
+  color: #16a34a !important;
+}
+
+.light-theme .text-orange-450 {
+  color: #ea580c !important;
+}
+
+.light-theme .text-cyan-455,
+.light-theme [class*="text-[#00f0ff]"] {
+  color: #0284c7 !important;
+}
+
+.light-theme .text-purple-400 {
+  color: #7c3aed !important;
+}
+
+.light-theme .text-rose-450 {
+  color: #dc2626 !important;
+}
+
+.light-theme .text-amber-500 {
+  color: #ca8a04 !important;
+}
+
+.light-theme [class*="text-emerald-200"],
+.light-theme [class*="text-emerald-300"] {
+  color: #047857 !important;
+}
+
+.light-theme [class*="text-orange-200"],
+.light-theme [class*="text-orange-300"] {
+  color: #c2410c !important;
+}
+
+.light-theme [class*="text-rose-200"],
+.light-theme [class*="text-rose-300"] {
+  color: #be123c !important;
+}
+
+.light-theme [class*="text-cyan-400"] {
+  color: #0284c7 !important;
+}
+
+.light-theme [class*="text-blue-400"] {
+  color: #2563eb !important;
+}
+
+.light-theme [class*="text-[#a0a0a0]"],
+.light-theme [class*="text-[#8a99ad]"],
+.light-theme [class*="text-[#808080]"] {
+  color: #475569 !important;
+}
+
+.light-theme [class*="bg-white/2"],
+.light-theme [class*="bg-white/3"],
+.light-theme [class*="bg-white/4"],
+.light-theme [class*="bg-white/5"],
+.light-theme [class*="bg-white/10"] {
+  background-color: rgba(248, 250, 252, 0.86) !important;
+}
+
+.light-theme [class*="bg-black/"],
+.light-theme [class*="bg-[#050811]"],
+.light-theme [class*="bg-[#070a14]"],
+.light-theme [class*="bg-[#0a0e1a]"],
+.light-theme [class*="bg-[#121420]"] {
+  background-color: rgba(241, 245, 249, 0.88) !important;
+}
+
+.light-theme [class*="border-white/5"],
+.light-theme [class*="border-white/10"] {
+  border-color: #dbe4ee !important;
+}
+
+.light-theme input::placeholder {
+  color: #64748b !important;
+}
+
+/* Day-mode polish for the protected admin panel */
+.admin-panel-overlay.admin-light {
+  background: rgba(226, 232, 240, 0.82) !important;
+  color: #0f172a !important;
+}
+
+.admin-panel-overlay.admin-light > section,
+.admin-panel-overlay.admin-light main {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.admin-panel-overlay.admin-light header,
+.admin-panel-overlay.admin-light aside,
+.admin-panel-overlay.admin-light [class*="bg-[#0d1728]"],
+.admin-panel-overlay.admin-light [class*="bg-[#0a1424]"] {
+  background: #ffffff !important;
+  border-color: #dbe4ee !important;
+}
+
+.admin-panel-overlay.admin-light section,
+.admin-panel-overlay.admin-light [class*="bg-[#050b15]"],
+.admin-panel-overlay.admin-light [class*="bg-[#07111f]"],
+.admin-panel-overlay.admin-light [class*="bg-white/"] {
+  background-color: #ffffff !important;
+  border-color: #dbe4ee !important;
+}
+
+.admin-panel-overlay.admin-light .bg-cyan-500\/\[0\.055\],
+.admin-panel-overlay.admin-light [class*="bg-cyan-500/"] {
+  background-color: #ecfeff !important;
+}
+
+.admin-panel-overlay.admin-light .bg-emerald-500\/\[0\.055\],
+.admin-panel-overlay.admin-light [class*="bg-emerald-500/"] {
+  background-color: #ecfdf5 !important;
+}
+
+.admin-panel-overlay.admin-light .bg-amber-500\/\[0\.055\],
+.admin-panel-overlay.admin-light [class*="bg-amber-500/"] {
+  background-color: #fffbeb !important;
+}
+
+.admin-panel-overlay.admin-light .bg-rose-500\/\[0\.055\],
+.admin-panel-overlay.admin-light [class*="bg-rose-500/"] {
+  background-color: #fff1f2 !important;
+}
+
+.admin-panel-overlay.admin-light h2,
+.admin-panel-overlay.admin-light h3,
+.admin-panel-overlay.admin-light h4,
+.admin-panel-overlay.admin-light strong,
+.admin-panel-overlay.admin-light .text-white {
+  color: #0f172a !important;
+}
+
+.admin-panel-overlay.admin-light p,
+.admin-panel-overlay.admin-light span,
+.admin-panel-overlay.admin-light label,
+.admin-panel-overlay.admin-light .text-slate-300,
+.admin-panel-overlay.admin-light .text-slate-400,
+.admin-panel-overlay.admin-light .text-slate-500 {
+  color: #334155 !important;
+}
+
+.admin-panel-overlay.admin-light input,
+.admin-panel-overlay.admin-light textarea,
+.admin-panel-overlay.admin-light select {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.admin-panel-overlay.admin-light input::placeholder,
+.admin-panel-overlay.admin-light textarea::placeholder {
+  color: #64748b !important;
+}
+
+.admin-panel-overlay.admin-light button.bg-cyan-500,
+.admin-panel-overlay.admin-light button.bg-emerald-500 {
+  color: #052e16 !important;
+}
+
+.admin-panel-overlay.admin-light [class*="border-white/"],
+.admin-panel-overlay.admin-light .border-white\/10,
+.admin-panel-overlay.admin-light .border-white\/5 {
+  border-color: #dbe4ee !important;
+}
+
+.light-theme .app-footer {
+  color: #0f172a !important;
+}
+
+.light-theme .footer-utility small,
+.light-theme .utility-info small {
+  color: #b45309 !important;
+}
+
+.light-theme .footer-alerts-banner .text-white,
+.light-theme .footer-utility .text-white {
+  color: #0f172a !important;
+}
+
+.app-copyright {
+  color: rgba(226, 232, 240, 0.72);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+}
+
+.light-theme .app-copyright {
+  color: #475569 !important;
+  text-shadow: none;
+}
+
+/* Glowing background lighting matching Bento aesthetic subtle decorations */
+.glow-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.02) 0%, transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.02) 0%, transparent 40%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Bento card background style overriding glass with solid-like dark elegance */
+.glass {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-intense);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-smooth);
+}
+
+/* Custom interactive inputs inside Bento cards */
+select, .glass-input {
+  background-color: #232326 !important;
+  border: 1px solid #3A3A3D !important;
+  color: #E0E0E0 !important;
+  border-radius: 12px !important;
+  transition: var(--transition-smooth);
+}
+select:focus, .glass-input:focus {
+  border-color: #3b82f6 !important;
+  outline: none;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+/* Zoom reset effects */
+.transition-all-custom {
+  transition: var(--transition-smooth);
+}
+
+/* Palette component items (the cards in the library) */
+.palette-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #232326;
+  border: 1px solid #2A2A2D;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  user-select: none;
+}
+
+.palette-item:hover {
+  background: #2D2D31;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.palette-item:active {
+  cursor: grabbing;
+}
+
+.item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom bento theme colors */
+.pv-color { background: rgba(245, 158, 11, 0.1); color: var(--solar-yellow); border: 1px solid rgba(245, 158, 11, 0.25); }
+.mppt-color { background: rgba(59, 130, 246, 0.1); color: var(--electric-blue); border: 1px solid rgba(59, 130, 246, 0.25); }
+.battery-color { background: rgba(34, 197, 94, 0.1); color: var(--energy-green); border: 1px solid rgba(34, 197, 94, 0.25); }
+.inverter-color { background: rgba(249, 115, 22, 0.1); color: var(--warning-orange); border: 1px solid rgba(249, 115, 22, 0.25); }
+.gen-color { background: rgba(168, 85, 247, 0.12); color: var(--gen-purple); border: 1px solid rgba(168, 85, 247, 0.25); }
+.load-color { background: rgba(59, 130, 246, 0.08); color: var(--electric-blue); border: 1px solid rgba(59, 130, 246, 0.22); }
+
+/* SVG Canvas Connections styles */
+.wire-path {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  transition: stroke 0.3s, stroke-width 0.2s;
+  filter: drop-shadow(0px 0px 5px var(--wire-glow-color, rgba(0,0,0,0)));
+}
+
+.wire-flow-charge {
+  stroke-dasharray: 8, 12;
+  animation: flow-pulse 1.2s linear infinite;
+}
+
+.wire-green {
+  stroke: var(--energy-green);
+  --wire-glow-color: rgba(34, 197, 94, 0.35);
+}
+.wire-blue {
+  stroke: var(--electric-blue);
+  --wire-glow-color: rgba(59, 130, 246, 0.35);
+}
+.wire-yellow {
+  stroke: var(--solar-yellow);
+  --wire-glow-color: rgba(245, 158, 11, 0.35);
+}
+.wire-red {
+  stroke: var(--error-red);
+  --wire-glow-color: rgba(239, 68, 68, 0.35);
+  stroke-dasharray: 4, 4;
+}
+.wire-inactive {
+  stroke: #2A2A2D;
+  --wire-glow-color: transparent;
+}
+
+@keyframes flow-pulse {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Circular Dashboard Gauge */
+.circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 2.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.circular-chart.green .circle { stroke: var(--energy-green); filter: drop-shadow(0 0 4px var(--energy-green)); }
+.circular-chart.yellow .circle { stroke: var(--solar-yellow); filter: drop-shadow(0 0 4px var(--solar-yellow)); }
+.circular-chart.red .circle { stroke: var(--error-red); filter: drop-shadow(0 0 4px var(--error-red)); }
+
+/* Interactive custom node styling */
+.canvas-node {
+  position: absolute;
+  width: 175px;
+  background: #161618;
+  border: 1px solid #2A2A2D;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.65);
+  padding: 12px;
+  cursor: grab;
+  z-index: 5;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+  user-select: none;
+}
+
+.canvas-node:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+}
+
+.canvas-node.active-error {
+  border-color: var(--error-red);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.canvas-node:active {
+  cursor: grabbing;
+}
+
+/* Dragging status border effect */
+.canvas-node:focus-within {
+  border-color: #3b82f6;
+}
+
+/* Custom interactive node input */
+.node-number-input {
+  background-color: #232326 !important;
+  border: 1px solid #3A3A3D !important;
+  border-radius: 8px !important;
+  outline: none;
+  padding: 3px 8px !important;
+  font-family: monospace;
+}
+.node-number-input:focus {
+  border-color: #3b82f6 !important;
+}
+
+/* Ports for visual connections */
+.node-port {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #161618;
+  border: 2px solid #3A3A3D;
+  z-index: 10;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.node-port.input {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.node-port.output {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.canvas-node:hover .node-port {
+  border-color: #3b82f6;
+  background-color: #232326;
+}
+
+/* Animation triggers */
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 1.5px solid var(--solar-yellow);
+  animation: sonar-pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes sonar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.empty-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Scrollbars styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2A2D;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* 2D Roof tiles arrangement styles */
+.roof-grid-tile {
+  width: 50px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  transition: var(--transition-smooth);
+}
+
+.roof-grid-tile.pv {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid var(--solar-yellow);
+  color: var(--solar-yellow);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.roof-grid-tile.pathway {
+  background: #232326;
+  border: 1px dashed #3A3A3D;
+  color: #707070;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.indicator.pv { background: var(--solar-yellow); }
+.indicator.pathway { background: rgba(255,255,255,0.15); border: 1px dashed rgba(255,255,255,0.3); }
+
+/* Custom alerts banner styling inside page */
+.footer-alerts-banner {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  padding: 8px 16px;
+  max-width: 500px;
+  transition: var(--transition-smooth);
+}
+
+.footer-alerts-banner.has-error {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.25) !important;
+}
+
+.footer-alerts-banner.has-warning {
+  background: rgba(249, 115, 22, 0.1) !important;
+  border: 1px solid rgba(249, 115, 22, 0.25) !important;
+}
+
+/* Applet Custom Theme Add-on adjustments */
+.app-container {
+  background-color: var(--bg-dark);
+}
+
+/* Buttons inside Bento Theme */
+.btn {
+  border-radius: 12px !important;
+  background-color: #232326 !important;
+  border: 1px solid #2A2A2D !important;
+  transition: var(--transition-smooth) !important;
+}
+.btn:hover {
+  background-color: #2D2D31 !important;
+  border-color: #3b82f6 !important;
+}
+
+.active-glow {
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+
+/* Chat bubles styling in Bento AI Advisor */
+.advisor-user-bubble {
+  background-color: rgba(59, 130, 246, 0.08) !important;
+  border: 1px solid rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Printed report utility rules */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .app-container {
+    display: block !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  /* Hide the main app layout while keeping the report modal printable */
+  .workspace-headers, .workspace-grid, .app-header, footer, aside, .no-print, [no-print] {
+    display: none !important;
+  }
+
+  /* Make the modal non-fixed, full page, white background */
+  .report-modal-overlay {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    z-index: auto !important;
+  }
+
+  /* Remove heavy borders, shadows, scrollbars, and background color from Report Modal */
+  #pdf-report-layout {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    transition: none !important;
+  }
+
+  .report-modal-overlay #pdf-report-layout.glass {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* Force white background and black text on the printable page structure */
+  #pdf-printable-area {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #pdf-printable-area,
+  #pdf-printable-area * {
+    text-shadow: none !important;
+    transition: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #pdf-printable-area p,
+  #pdf-printable-area span,
+  #pdf-printable-area div,
+  #pdf-printable-area strong,
+  #pdf-printable-area li,
+  #pdf-printable-area td {
+    color: #111827 !important;
+  }
+
+  /* Make sure titles and headings are visible and dark on print */
+  #pdf-printable-area h2,
+  #pdf-printable-area h3,
+  #pdf-printable-area h4 {
+    color: #111111 !important;
+  }
+
+  /* Keep accent colors legible on print */
+  #pdf-printable-area .text-slate-400,
+  #pdf-printable-area .text-slate-500 {
+    color: #555555 !important;
+  }
+  
+  #pdf-printable-area .bg-white\/3 {
+    background: #f3f4f6 !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  #pdf-printable-area table tr {
+    border-bottom: 1px solid #e5e7eb !important;
+  }
+
+  #pdf-printable-area table th {
+    color: #374151 !important;
+    background: #f3f4f6 !important;
+  }
+
+  #pdf-printable-area table td {
+    color: #1f2937 !important;
+  }
+
+  /* Verdict boxes on print need high contrast light-mode versions */
+  #pdf-printable-area .bg-\[\#ff3d00\]\/10 {
+    background: #fef2f2 !important;
+    border: 1.5px solid #ef4444 !important;
+    color: #991b1b !important;
+  }
+  
+  #pdf-printable-area .bg-\[\#ff9100\]\/10 {
+    background: #fffbeb !important;
+    border: 1.5px solid #d97706 !important;
+    color: #92400e !important;
+  }
+  
+  #pdf-printable-area .bg-\[\#00e676\]\/10 {
+    background: #f0fdf4 !important;
+    border: 1.5px solid #22c55e !important;
+    color: #166534 !important;
+  }
+}
+
+body.printing-report .report-modal-overlay,
+body.printing-report #pdf-report-layout,
+body.printing-report .report-modal-overlay #pdf-report-layout.glass {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+body.printing-report #pdf-report-layout {
+  border-radius: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  transition: none !important;
+}
+
+body.printing-report #pdf-report-layout,
+body.printing-report #pdf-report-layout * {
+  transition: none !important;
+}

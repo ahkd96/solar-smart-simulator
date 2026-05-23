@@ -49,8 +49,10 @@ export interface AdminState {
   settings: BusinessSettings;
 }
 
+export const ASHTAR_PROJECT_NAME = 'عشتار للطاقة | ASHTAR ENERGY';
+
 export const defaultBusinessSettings: BusinessSettings = {
-  companyName: 'Solar Smart Simulator',
+  companyName: ASHTAR_PROJECT_NAME,
   phone: '+964 770 000 0000',
   whatsapp: '9647700000000',
   address: 'العراق',
@@ -71,7 +73,7 @@ export const createEmptyAdminState = (): AdminState => ({
   loads: cloneLoads(),
   customers: [],
   projects: [],
-  settings: defaultBusinessSettings
+  settings: { ...defaultBusinessSettings }
 });
 
 export const loadAdminState = (): AdminState => {
@@ -82,12 +84,17 @@ export const loadAdminState = (): AdminState => {
     if (!raw) return createEmptyAdminState();
     const parsed = JSON.parse(raw) as Partial<AdminState>;
 
+    const settings = { ...defaultBusinessSettings, ...(parsed.settings || {}) };
+    if (!settings.companyName.trim() || settings.companyName.trim() === 'Solar Smart Simulator') {
+      settings.companyName = ASHTAR_PROJECT_NAME;
+    }
+
     return {
       catalog: parsed.catalog || cloneCatalog(),
       loads: parsed.loads || cloneLoads(),
       customers: parsed.customers || [],
       projects: parsed.projects || [],
-      settings: { ...defaultBusinessSettings, ...(parsed.settings || {}) }
+      settings
     };
   } catch {
     return createEmptyAdminState();

@@ -1,5 +1,6 @@
 import React from 'react';
 import { citiesData } from '../data';
+import { ASHTAR_PROJECT_NAME } from '../lib/adminStorage';
 
 interface ReportModalProps {
   isOpen: boolean;
@@ -15,7 +16,7 @@ export default function ReportModal({ isOpen, onClose, calcs, cityKey, seasonKey
 
   const cityInfo = citiesData[cityKey] || citiesData.baghdad;
   const todayDate = new Date().toLocaleDateString('ar-IQ');
-  const displayBusinessName = businessName?.trim() || 'Solar Smart Simulator';
+  const displayBusinessName = businessName?.trim() || ASHTAR_PROJECT_NAME;
 
   const printReport = () => {
     const cleanupPrintState = () => {

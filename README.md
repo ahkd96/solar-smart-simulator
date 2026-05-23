@@ -2,9 +2,9 @@
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
 
-# Run and deploy your AI Studio app
+# عشتار للطاقة | ASHTAR ENERGY
 
-This contains everything you need to run your app locally.
+منصة محاكاة وتصميم منظومات الطاقة الشمسية الذكية.
 
 View your app in AI Studio: https://ai.studio/apps/2238218f-9b51-4203-a58c-1d40f20dae67
 

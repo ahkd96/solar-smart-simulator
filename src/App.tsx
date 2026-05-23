@@ -7,13 +7,13 @@ import CartModal from './components/CartModal';
 import ReportModal from './components/ReportModal';
 import TemplatesModal from './components/TemplatesModal';
 import AdminPanel from './components/admin/AdminPanel';
-import { AdminState, SavedProject, hydrateNodesFromCatalog, loadAdminState, saveAdminState } from './lib/adminStorage';
+import { ASHTAR_PROJECT_NAME, AdminState, SavedProject, hydrateNodesFromCatalog, loadAdminState, saveAdminState } from './lib/adminStorage';
 
 export default function App() {
   const [adminState, setAdminState] = useState<AdminState>(() => loadAdminState());
   const productCatalog = adminState.catalog;
   const loadCatalog = adminState.loads;
-  const appDisplayName = adminState.settings.companyName?.trim() || 'منصة محاكاة الطاقة الشمسية الذكية';
+  const appDisplayName = adminState.settings.companyName?.trim() || ASHTAR_PROJECT_NAME;
 
   // Global States
   const [cityKey, setCityKey] = useState<string>('baghdad');
@@ -125,7 +125,7 @@ export default function App() {
   }, [adminState]);
 
   useEffect(() => {
-    document.title = `${appDisplayName} - Solar Smart Simulator`;
+    document.title = appDisplayName;
   }, [appDisplayName]);
 
   useEffect(() => {
@@ -859,7 +859,7 @@ ${loadSum > 6000
           </div>
           <div className="logo-text">
             <h1 className="text-sm font-bold tracking-tight text-white">{appDisplayName}</h1>
-            <span className="subtitle text-[10px] text-slate-400 block font-semibold font-mono tracking-wider">SOLAR SMART SIMULATOR PLATFORM</span>
+            <span className="subtitle text-[10px] text-slate-400 block font-semibold font-mono tracking-wider">ASHTAR ENERGY SOLAR PLATFORM</span>
           </div>
         </div>
 

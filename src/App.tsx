@@ -2096,8 +2096,8 @@ ${loadSum > 6000
         </div>
       </footer>
 
-      <div className="app-copyright no-print fixed bottom-1 left-3 right-3 z-40 text-center text-[10px] font-semibold tracking-wide select-none">
-        Designed by Eng. Atheer Harith © 2026
+      <div dir="ltr" className="app-copyright no-print fixed bottom-1 left-3 z-30 w-fit max-w-[calc(100vw-1.5rem)] pointer-events-none rounded-full px-2 py-0.5 text-left text-[9px] font-semibold tracking-wide select-none">
+        Designed by Eng. Atheer Harith &copy; 2026
       </div>
 
       {/* Subcomponents Dialog Modals Rendering */}
